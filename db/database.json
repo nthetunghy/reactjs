@@ -1,10 +1,10 @@
 {
-    "users" : [
-        {
-            "id" : 1,
-            "userName": "nthetung",
-            "password":"150201",
-            "token":"abc"
-        }
-    ]
+  "users": [
+    {
+      "id": 1,
+      "userName": "anhqt1",
+      "password": "123123",
+      "token": "abc"
+    }
+  ]
 }
