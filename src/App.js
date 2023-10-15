@@ -1,22 +1,16 @@
 import { useState } from "react";
-import InputText from "./components/InputText";
-import TodoList from "./components/TodoList";
-
+import Dashboard from "./layout/Dashboard";
+import {BrowserRouter as Router,Routes,Route} from "react-router-dom";
+import Login from "./layout/Login";
 function App() {
-  const [todo, setTodo] = useState([]);
-  const addTodo = (data) => {
-    setTodo([
-      ...todo,
-      {
-        todo: data,
-      }
-    ]);
-  };
-
   return (
     <div className="App">
-      <InputText addTodo={addTodo} />
-      <TodoList todo={todo} setTodo={setTodo} />
+     <Router>
+      <Routes>
+        <Route path="/login" element = {<Login/>}/>
+        <Route path="/" element = {<Dashboard/>}/>
+      </Routes>
+     </Router>
     </div>
   );
 }
