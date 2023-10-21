@@ -2,9 +2,59 @@
   "users": [
     {
       "id": 1,
-      "userName": "anhqt1",
+      "userName": "anhqt2",
       "password": "123123",
       "token": "abc"
+      
     }
-  ]
+  ],
+  "customer": [
+    {
+      "id":1,
+      "customer_code":"KH001",
+      "name":"Nguyễn Văn A",
+      "phone_number":"0971251514",
+      "unique_code":"absf3243",
+      "nationality":"viet nam",
+      "add" : "Cầu giấy,Hn"
+    }
+  ],
+  "room":[
+    {
+      "id":1,
+      "room_number":"P101",
+      "status":1,
+      "room_type":1,
+      "price":1000,
+      "service": [
+        {
+          "id_service":1
+        }
+      ]
+    }
+  ],
+  "service":[{
+    "id":1,
+    "service_code":"DV001",
+    "price":500
+  }],
+  "booking":[{
+    "id":1,
+    "id_customer":1,
+    "id_room":1,
+    "service":[
+      {
+        "id_service":1
+      }
+    ]
+
+  }],
+  "facilities":[{
+    "id":1,
+    "facilities_code":"TN001",
+    "name":"Giường đơn",
+    "status":1,
+    "quatity":5
+  }]
+  
 }

@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import CardRoom from "../components/CardRoom";
 import { MdKeyboardArrowRight } from "react-icons/md";
 
 const AllRoom = () => {
+  const [isModal, setIsModal] = useState(false)
+
   const arrRoom = [
     {
       id: 1,
@@ -52,9 +54,10 @@ const AllRoom = () => {
   ];
 
   return (
-    <div className="all_room">
-      <div className="all_room_container">
-        <div className="all_room_header">
+    <>
+      <div className="all_room">
+        <div className="all_room_container">
+          {/* <div className="all_room_header">
           <ul>
             <li>
               <input type="text" placeholder="Tìm kiếm phòng..." />
@@ -66,15 +69,38 @@ const AllRoom = () => {
             <li>Phòng đã được đặt</li>
             <li>Phòng đang sửa chữa</li>
           </ul>
-        </div>
+        </div> */}
 
-        <div className="all_room_body">
-          {arrRoom?.map((value, index) => {
-            return <CardRoom value={value} key={index} />;
-          })}
+          <div className="all_room_body">
+            {arrRoom?.map((value, index) => {
+              return <CardRoom value={value} key={index} />;
+            })}
+          </div>
+          <div className="all_room_bt"><button className="dashboard_bt" onClick={() => setIsModal(!isModal)}>Thêm Phòng</button></div>
         </div>
       </div>
-    </div>
+      {isModal && <div className="all_room_modal">
+
+        <div className="modal_container">
+
+          <div className="modal_name">Thêm Phòng</div>
+          <div className="modal_name1">
+            <div className="modal_lists">
+              <input type="text" placeholder="Nhập tên Phòng" />
+            </div>
+            <div className="modal_lists">
+              <input type="text" placeholder="Loại phòng" />
+            </div>
+            <div className="modal_lists">
+              <button >Thêm</button>
+              <button onClick={() => setIsModal(!isModal)}>Close</button>
+            </div>
+          </div>
+        </div>
+      </div>}
+
+
+    </>
   );
 };
 
